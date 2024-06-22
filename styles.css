@@ -1,0 +1,118 @@
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "Hiragino Sans", "Meiryo", sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+}
+h1 {
+  color: #333;
+}
+table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 4px;
+  text-align: left;
+  height: 24px;
+}
+th {
+  background-color: #f2f2f2;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+}
+th.sort-asc::after, th.sort-desc::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  border: 5px solid transparent;
+}
+th.sort-asc::after {
+  border-bottom-color: #333;
+  top: 50%;
+  transform: translateY(-50%);
+}
+th.sort-desc::after {
+  border-top-color: #333;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}
+.copy-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.copy-button:hover {
+  background-color: #45a049;
+}
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  max-width: 900px;
+}
+.filters-bar .nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0;
+}
+.filters-bar .nav li {
+  margin: 0 6px 6px 0;
+}
+.filters-bar .nav a {
+  padding: 5px 10px;
+  background-color: #ddd;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
+}
+.filters-bar .nav a.selected {
+  background-color: #ccc;
+}
+.filters-bar .nav a.reset-filter {
+  background-color: #ffcccb;
+}
+.filters-bar .nav a.reset-filter:hover {
+  background-color: #ffb3b0;
+}
+.filters-bar .nav a.zundamon {
+  background-color: #e0f7e9;
+}
+.filters-bar .nav a.zundamon.selected {
+  background-color: #c1e7d4;
+}
+.filters-bar .search-box {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.filters-bar .search-box input {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
