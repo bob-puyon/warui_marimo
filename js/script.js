@@ -1,10 +1,23 @@
+let tableData = [];
 let currentSortColumn = -1;
 let currentSortOrder = '';
 let selectedFilter = '';
 
+function loadCSV(url) {
+  return fetch(url)
+    .then(response => response.text())
+    .then(text => {
+      const rows = text.trim().split('\n');
+      return rows.map(row => row.split(','));
+    });
+}
+
 function loadSheetData() {
-  renderFilters();
-  renderTable(tableData);
+  loadCSV('data/tableData.csv').then(data => {
+    tableData = data;
+    renderFilters();
+    renderTable(data);
+  });
 }
 
 function renderFilters() {
