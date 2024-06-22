@@ -13,7 +13,7 @@ function loadCSV(url) {
 }
 
 function loadSheetData() {
-  loadCSV('data/tableData.csv').then(data => {
+  loadCSV('data/voice_actor_list.csv').then(data => {
     tableData = data;
     renderFilters();
     renderTable(data);
